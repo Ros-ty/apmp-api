@@ -3,5 +3,5 @@ class AnswerSerializer < ActiveModel::Serializer
              :title,
              :content,
              :request_id
-  # belongs_to :request
+  has_many :comments
 end

@@ -3,8 +3,8 @@ module AnswersDoc
   extend Apipie::DSL::Concern
 
   def_param_group :main_params do
-    param :title, String, desc: 'Requests title. Can not be blank. Must be more than 2 characters.'
-    param :content, String, desc: 'Requests content. Can not be blank. Must be more than 2 characters.'
+    param :title, String, desc: 'Answer title. Can not be blank. Must be more than 2 characters.'
+    param :content, String, desc: 'Answer content. Can not be blank. Must be more than 2 characters.'
     param :request_id, Integer, desc: 'Request Id'
   end
 
