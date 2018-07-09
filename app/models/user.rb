@@ -1,11 +1,11 @@
 class User < ActiveRecord::Base
   # user roles
-  # enum role: [:user, :moderator, :admin]
-  # after_initialize :set_default_role, :if => :new_record?
+  enum role: [:user, :moderator, :admin]
+  after_initialize :set_default_role, :if => :new_record?
   # check user role
-  # def set_default_role
-  #   self.role ||= :user
-  # end
+  def set_default_role
+    self.role ||= :user
+  end
   # validations:first_name,
   validates :last_name, if: -> { self.last_name.present? },
             length: { minimum: 2, message: "must be more than 2 characters" },

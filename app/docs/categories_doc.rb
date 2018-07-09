@@ -3,13 +3,13 @@ module CategoriesDoc
   extend Apipie::DSL::Concern
 
   def_param_group :main_params do
-    param :name, String, desc: 'Categories name. '
-    param :content, String, desc: 'Categories content. '
+    param :name, String, required: true, desc: 'Categories name. Can not be blank. Must be more than 2 characters.'
+    param :content, String, desc: 'Categories content. Can not be blank. Must be more than 2 characters.'
   end
 
   api :GET, '/categories', 'All Categories '
   description <<-EOS
-    == Get Action categories
+    == Get action categories
       Is used for get all categories
         curl -v localhost:3000/api/v1/categories -X GET
     == Result
@@ -26,9 +26,10 @@ module CategoriesDoc
         }
       ]
     EOS
+  param_group :main_params
   def index; end
 
-  api :POST, '/categories', 'Create category'
+  api :POST, '/categories', 'Create Сategory'
   description <<-EOS
     == Create categories article
     Is used for creating categories
@@ -45,8 +46,8 @@ module CategoriesDoc
 
   api :GET, '/categories/:id', 'Show Category'
   description <<-EOS
-    == Show single Category
-    Is used for show single Category
+    == Show single category
+    Is used for show single category
       curl -v localhost:3000/api/v1/categories/1
     == Result
       {
@@ -55,13 +56,14 @@ module CategoriesDoc
         "content": "test"
       }
     EOS
-  param :id, Integer, desc: 'Id Category for show. ', required: true
+  param :id, Integer, desc: 'Id category for show. ', required: true
+  param_group :main_params
   def show; end
 
   api :PATCH, '/categories/:id', 'Update Category'
   description <<-EOS
-    == Update Category article
-    Is used for updating Category
+    == Update category article
+    Is used for updating category
       curl -v localhost:3000/api/v1/categories/1 -v -X PUT -F name='name'
     == Result
       {
@@ -70,15 +72,16 @@ module CategoriesDoc
         "content": "test"
       }
     EOS
+  param :id, Integer, desc: 'Id category for show. ', required: true
   param_group :main_params
   def update; end
 
   api :DELETE, '/categories/:id', 'Delete Category'
   description <<-EOS
-    == Delete single Category
-    Is used for delete single Category
+    == Delete single category
+    Is used for delete single category
       curl -v localhost:3000/api/v1/categories/1 -X DELETE
     EOS
-  param :id, Integer, desc: 'Id Category for delete. ', required: true
+  param :id, Integer, desc: 'Id category for delete. ', required: true
   def destroy; end
 end

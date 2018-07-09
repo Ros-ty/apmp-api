@@ -10,6 +10,9 @@ Rails.application.routes.draw do
         # Define routes for Admin within this block.
       end
       resources :categories
+      resources :requests
+      resources :answers
+      resources :comments
     end
   end
 end
