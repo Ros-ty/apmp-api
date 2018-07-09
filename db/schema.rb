@@ -45,8 +45,10 @@ ActiveRecord::Schema.define(version: 2018_07_06_132200) do
   create_table "answers", force: :cascade do |t|
     t.string "title"
     t.string "content"
+    t.integer "request_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["request_id"], name: "index_answers_on_request_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -59,8 +61,10 @@ ActiveRecord::Schema.define(version: 2018_07_06_132200) do
   create_table "comments", force: :cascade do |t|
     t.string "author"
     t.string "content"
+    t.integer "answer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_comments_on_answer_id"
   end
 
   create_table "requests", force: :cascade do |t|

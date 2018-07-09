@@ -15,14 +15,14 @@ module CategoriesDoc
     == Result
       [
         {
-            "id": 1,
-            "name": "test",
-            "content": "test"
+          "id": 1,
+          "name": "test",
+          "content": "test"
         },
         {
-            "id": 2,
-            "name": "test-name",
-            "content": "test-content"
+          "id": 2,
+          "name": "test-name",
+          "content": "test-content"
         }
       ]
     EOS

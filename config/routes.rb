@@ -10,9 +10,13 @@ Rails.application.routes.draw do
         # Define routes for Admin within this block.
       end
       resources :categories
-      resources :requests
-      resources :answers
-      resources :comments
+      resources :answers, only: [:index]
+
+      resources :requests do
+        resources :answers, except: [:index] do
+          resources :comments
+        end
+      end
     end
   end
 end
