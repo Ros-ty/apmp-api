@@ -13,7 +13,7 @@ module CommentsDoc
   description <<-EOS
     == Get action comments
     Is used for get all comments
-      curl -v localhost:3000/api/v1/requests/1/answers/1/comments -X GET
+      curl -v https://apmp-api.herokuapp.com/api/v1/requests/1/answers/1/comments -X GET
     == Result
       [
         {
@@ -37,7 +37,7 @@ module CommentsDoc
   description <<-EOS
     == Create comment article
     Is used for creating comment
-      curl -v localhost:3000/api/v1/requests/1/answers/1/comments -v -X POST -F author='author' -F content='content'
+      curl -v https://apmp-api.herokuapp.com/api/v1/requests/1/answers/1/comments -v -X POST -F author='author' -F content='content'
     == Result
       {
         "id": 1,
@@ -60,7 +60,7 @@ module CommentsDoc
   description <<-EOS
     == Show single comment
     Is used for show single comment
-      curl -v localhost:3000/api/v1/requests/1/answers/1/comments/1
+      curl -v https://apmp-api.herokuapp.com/api/v1/requests/1/answers/1/comments/1
     == Result
       {
         "id": 1,
@@ -77,7 +77,7 @@ module CommentsDoc
   description <<-EOS
     == Update comment article
     Is used for updating comment
-      curl -v localhost:3000/api/v1/requests/1/answers/1/comments/1 -v -X PUT -F author='author', -F content='content-update'
+      curl -v https://apmp-api.herokuapp.com/api/v1/requests/1/answers/1/comments/1 -v -X PUT -F author='author', -F content='content-update'
     == Result
       {
         "id": 1,
@@ -94,7 +94,7 @@ module CommentsDoc
   description <<-EOS
     == Delete single comment
     Is used for delete single comment
-      curl -v localhost:3000/api/v1/requests/1/answers/1/comments/1 -X DELETE
+      curl -v https://apmp-api.herokuapp.com/api/v1/requests/1/answers/1/comments/1 -X DELETE
     EOS
   param :id, Integer, desc: 'Id comment for delete. ', required: true
   def destroy; end

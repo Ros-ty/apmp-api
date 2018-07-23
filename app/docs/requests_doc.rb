@@ -11,7 +11,7 @@ module RequestsDoc
   description <<-EOS
     == Get action requests
     Is used for get all requests
-      curl -v localhost:3000/api/v1/requests -X GET
+      curl -v https://apmp-api.herokuapp.com/api/v1/requests -X GET
     == Result
       [
         {
@@ -33,7 +33,7 @@ module RequestsDoc
   description <<-EOS
     == Create request article
     Is used for creating request
-      curl -v localhost:3000/api/v1/requests -v -X POST -F title='title' -F content='content'
+      curl -v https://apmp-api.herokuapp.com/api/v1/requests -v -X POST -F title='title' -F content='content'
     == Result
       {
         "id": 1,
@@ -48,7 +48,7 @@ module RequestsDoc
   description <<-EOS
     == Show single request
     Is used for show single request
-      curl -v localhost:3000/api/v1/requests/1
+      curl -v https://apmp-api.herokuapp.com/api/v1/requests/1
     == Result
       {
         "id": 1,
@@ -64,7 +64,7 @@ module RequestsDoc
   description <<-EOS
     == Update request article
     Is used for updating request
-      curl -v localhost:3000/api/v1/requests/1 -v -X PUT -F title='title'
+      curl -v https://apmp-api.herokuapp.com/api/v1/requests/1 -v -X PUT -F title='title'
     == Result
       {
         "id": 1,
@@ -80,7 +80,7 @@ module RequestsDoc
   description <<-EOS
     == Delete single request
     Is used for delete single request
-      curl -v localhost:3000/api/v1/requests/1 -X DELETE
+      curl -v https://apmp-api.herokuapp.com/api/v1/requests/1 -X DELETE
     EOS
   param :id, Integer, desc: 'Id request for delete. ', required: true
   def destroy; end

@@ -17,7 +17,7 @@ module ApplicationDoc
   description <<-EOS
     == Create User
       Is used for create user
-        curl -v localhost:3000/api/v1/auth -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"email": "email@example.com", "password": "password", "password_confirmation": "password"}'
+        curl -v https://apmp-api.herokuapp.com/api/v1/auth -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"email": "email@example.com", "password": "password", "password_confirmation": "password"}'
     == Result
       {
         "status": "success",
@@ -45,7 +45,7 @@ module ApplicationDoc
     == Check user
     Is used for sing_in user
       Is used for sing_in
-        curl -v localhost:3000/api/v1/auth/sign_in -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"email": "email@example.com", "password": "password"}'
+        curl -v https://apmp-api.herokuapp.com/api/v1/auth/sign_in -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"email": "email@example.com", "password": "password"}'
     == Result
       {
         "data": {
@@ -70,7 +70,7 @@ module ApplicationDoc
     == Destroy session for User
     Is used for destroy user session
       Is used for destroy
-        curl -v localhost:3000/api/v1/auth/sign_out -X DELETE -H 'Content-Type: application/json' -H 'access-token: ZUhZTi5bvi5NajqZsgUp9Q' -H 'client: w_7IVg-ZRB_Pbs6elMhwuw' -H 'uid: email@example.com'
+        curl -v https://apmp-api.herokuapp.com/api/v1/auth/sign_out -X DELETE -H 'Content-Type: application/json' -H 'access-token: ZUhZTi5bvi5NajqZsgUp9Q' -H 'client: w_7IVg-ZRB_Pbs6elMhwuw' -H 'uid: email@example.com'
     == Result
       "success": true
     == Headers which you need for continue work

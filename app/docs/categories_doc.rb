@@ -11,7 +11,7 @@ module CategoriesDoc
   description <<-EOS
     == Get action categories
       Is used for get all categories
-        curl -v localhost:3000/api/v1/categories -X GET
+        curl -v https://apmp-api.herokuapp.com/api/v1/categories -X GET
     == Result
       [
         {
@@ -33,7 +33,7 @@ module CategoriesDoc
   description <<-EOS
     == Create categories article
     Is used for creating categories
-      curl -v localhost:3000/api/v1/categories -v -X POST -F name='name' -F content='content'
+      curl -v https://apmp-api.herokuapp.com/api/v1/categories -v -X POST -F name='name' -F content='content'
     == Result
       {
         "id": 1,
@@ -48,7 +48,7 @@ module CategoriesDoc
   description <<-EOS
     == Show single category
     Is used for show single category
-      curl -v localhost:3000/api/v1/categories/1
+      curl -v https://apmp-api.herokuapp.com/api/v1/categories/1
     == Result
       {
         "id": 1,
@@ -64,7 +64,7 @@ module CategoriesDoc
   description <<-EOS
     == Update category article
     Is used for updating category
-      curl -v localhost:3000/api/v1/categories/1 -v -X PUT -F name='name'
+      curl -v https://apmp-api.herokuapp.com/api/v1/categories/1 -v -X PUT -F name='name'
     == Result
       {
         "id": 1,
@@ -80,7 +80,7 @@ module CategoriesDoc
   description <<-EOS
     == Delete single category
     Is used for delete single category
-      curl -v localhost:3000/api/v1/categories/1 -X DELETE
+      curl -v https://apmp-api.herokuapp.com/api/v1/categories/1 -X DELETE
     EOS
   param :id, Integer, desc: 'Id category for delete. ', required: true
   def destroy; end

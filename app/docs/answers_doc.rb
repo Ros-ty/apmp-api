@@ -12,7 +12,7 @@ module AnswersDoc
   description <<-EOS
     == Get action answers
     Is used for get all answers
-      curl -v localhost:3000/api/v1/answers -X GET
+      curl -v https://apmp-api.herokuapp.com/api/v1/answers -X GET
     == Result
       [
         {
@@ -36,7 +36,7 @@ module AnswersDoc
   description <<-EOS
     == Create answer article
     Is used for creating answer
-      curl -v localhost:3000/api/v1/requests/1/answers -v -X POST -F title='title' -F content='content'
+      curl -v https://apmp-api.herokuapp.com/api/v1/requests/1/answers -v -X POST -F title='title' -F content='content'
     == Result
       {
         "id": 1,
@@ -59,7 +59,7 @@ module AnswersDoc
   description <<-EOS
     == Show single answer
     Is used for show single answer
-      curl -v localhost:3000/api/v1/requests/1/answers/1
+      curl -v https://apmp-api.herokuapp.com/api/v1/requests/1/answers/1
     == Result
       {
         "id": 1,
@@ -76,7 +76,7 @@ module AnswersDoc
   description <<-EOS
     == Update answer article
     Is used for updating answer
-      curl -v localhost:3000/api/v1/requests/1/answers/1 -v -X PUT -F title='title-update', -F content='content-update'
+      curl -v https://apmp-api.herokuapp.com/api/v1/requests/1/answers/1 -v -X PUT -F title='title-update', -F content='content-update'
     == Result
       {
         "id": 1,
@@ -93,7 +93,7 @@ module AnswersDoc
   description <<-EOS
     == Delete single answer
     Is used for delete single answer
-      curl -v localhost:3000/api/v1/requests/1/answers/1 -X DELETE
+      curl -v https://apmp-api.herokuapp.com/api/v1/requests/1/answers/1 -X DELETE
     EOS
   param :id, Integer, desc: 'Id answer for delete. ', required: true
   def destroy; end
