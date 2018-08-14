@@ -6,6 +6,7 @@ gem 'rails', '~> 5.2.0'
 gem 'puma', '~> 3.11'
 
 gem 'apipie-rails'
+gem 'cancancan', '~> 2.0'
 # gem "paperclip", "~> 5.0.0"
 # gem 'aws-sdk', '~> 2.3'
 gem 'active_model_serializers', '~> 0.10.0'

@@ -53,6 +53,7 @@ GEM
     bcrypt (3.1.12)
     builder (3.2.3)
     byebug (10.0.2)
+    cancancan (2.2.0)
     case_transform (0.2)
       activesupport
     concurrent-ruby (1.0.5)
@@ -180,6 +181,7 @@ DEPENDENCIES
   active_model_serializers (~> 0.10.0)
   apipie-rails
   byebug
+  cancancan (~> 2.0)
   database_cleaner
   devise_token_auth
   dotenv-rails
