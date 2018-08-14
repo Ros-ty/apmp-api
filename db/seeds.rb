@@ -11,7 +11,7 @@ User.create!([
  		email: "email_admin@gmail.com",
  		password: "password",
  		password_confirmation: "password",
-    role: "user"
+    role: "admin"
  	},
  	{
  		email: "email_moderator@gmail.com",
