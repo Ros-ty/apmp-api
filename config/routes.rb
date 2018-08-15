@@ -5,10 +5,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       mount_devise_token_auth_for 'User', at: 'auth'
 
-      mount_devise_token_auth_for 'Admin', at: 'admin_auth'
-      as :admin do
-        # Define routes for Admin within this block.
-      end
+      # mount_devise_token_auth_for 'Admin', at: 'admin_auth'
+      # as :admin do
+      #   # Define routes for Admin within this block.
+      # end
+      resources :users, only: [:index, :update]
       resources :categories
       resources :answers, only: [:index]
 
