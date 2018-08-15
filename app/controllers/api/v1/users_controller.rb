@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+  include UsersDoc
   before_action :set_user, only: [:update]
 
   # GET /users
