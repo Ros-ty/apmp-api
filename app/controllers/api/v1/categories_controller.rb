@@ -33,7 +33,7 @@ class Api::V1::CategoriesController < ApplicationController
   private
 
   def category_params
-    params.permit(:name, :content)
+    params.require(:category).permit(:name, :content, forms_attributes: [:id, :form_name, :form_type])
   end
 
   def set_category

@@ -18,11 +18,26 @@ module CategoriesDoc
           "id": 1,
           "name": "test",
           "content": "test"
+          "forms": [
+            {
+              "id": 4,
+              "form_name": "form_name",
+              "form_type": "form_type",
+              "category_id": 1
+            }
+            {
+              "id": 5,
+              "form_name": "form_name",
+              "form_type": "form_type",
+              "category_id": 1
+            }
+          ]
         },
         {
           "id": 2,
           "name": "test-name",
           "content": "test-content"
+          "forms": []
         }
       ]
     EOS
@@ -36,9 +51,14 @@ module CategoriesDoc
       curl -v https://apmp-api.herokuapp.com/api/v1/categories -v -X POST -F name='name' -F content='content'
     == Result
       {
-        "id": 1,
         "name": "test",
         "content": "test"
+        "forms": [
+          {
+            "form_name": "form_name",
+            "form_type": "form_type"
+          }
+        ]
       }
     EOS
   param_group :main_params
@@ -54,6 +74,14 @@ module CategoriesDoc
         "id": 1,
         "name": "test",
         "content": "test"
+        "forms": [
+          {
+            "id": 4,
+            "form_name": "form_name",
+            "form_type": "form_type",
+            "category_id": 1
+          }
+        ]
       }
     EOS
   param :id, Integer, desc: 'Id category for show. ', required: true
@@ -70,6 +98,14 @@ module CategoriesDoc
         "id": 1,
         "name": "test",
         "content": "test"
+        "forms": [
+          {
+            "id": 4,
+            "form_name": "form_name",
+            "form_type": "form_type",
+            "category_id": 1
+          }
+        ]
       }
     EOS
   param :id, Integer, desc: 'Id category for show. ', required: true
