@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       # end
       resources :users, only: [:index, :update]
       resources :categories
+      resources :forms, only: [:create, :destroy]
       resources :answers, only: [:index]
 
       resources :requests do
