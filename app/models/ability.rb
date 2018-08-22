@@ -7,7 +7,8 @@ class Ability
       can [:create, :destroy], Request, user_id: user.id 
       if user.admin?  # additional permissions for administrators
         can :manage, :all
-      elsif user.moderator? # additional permissions for moderators
+      end
+      if user.moderator? # additional permissions for moderators
         can :manage, [Request, Answer]
       end
     end
