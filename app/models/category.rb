@@ -1,6 +1,5 @@
 class Category < ApplicationRecord
   # model association
-  # has_many :something, dependent: :destroy
   has_many :forms, dependent: :destroy, inverse_of: :category
   accepts_nested_attributes_for :forms, allow_destroy: true, reject_if: ->(attrs) { attrs['form_name'].blank? || attrs['form_type'].blank? }
   # validations

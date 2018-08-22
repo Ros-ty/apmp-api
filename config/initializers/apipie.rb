@@ -1,4 +1,5 @@
 Apipie.configure do |config|
+  config.reload_controllers = true
   config.translate = false
   config.default_locale = nil
   config.app_name                = "APMP-Api"
